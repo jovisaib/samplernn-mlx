@@ -1,9 +1,8 @@
-matplotlib==2.1.0
+matplotlib>=3.5.0
 natsort==5.1.0
-mlx-core==0.0.5
-mlx-nn==0.0.5
+mlx==0.18.0
 librosa==0.9.2
-numpy==1.21.5
-scipy==1.7.3
+numpy>=1.26.0
+scipy>=1.7.3
 soundfile==0.10.3.post1
 tqdm==4.62.3
