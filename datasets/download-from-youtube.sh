@@ -2,7 +2,7 @@
 
 if [ "$#" -ne 3 ]; then
     echo "Usage: $0 <youtube url> <chunk size in seconds> <dataset path>"
-    exit
+    exit 1
 fi
 
 url=$1
@@ -11,8 +11,9 @@ dataset_path=$3
 
 downloaded=".temp"
 rm -f $downloaded
-format=$(youtube-dl -F $url | grep audio | sed -r 's|([0-9]+).*|\1|g' | tail -n 1)
-youtube-dl $url -f $format -o $downloaded
+# Replace youtube-dl with yt-dlp
+format=$(yt-dlp -F $url | grep audio | sed -r 's|([0-9]+).*|\1|g' | tail -n 1)
+yt-dlp $url -f $format -o $downloaded
 
 converted=".temp2.wav"
 rm -f $converted
